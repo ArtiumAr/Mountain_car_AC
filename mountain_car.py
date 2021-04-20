@@ -42,7 +42,7 @@ def modify_env(env):
     return env
 
 
-class SAC:
+class QAC:
     def __init__(self, alpha, gamma, env, location_centers, speed_centers ,total_steps,
                  policy_evaluation_step):
         self.ALPHA = alpha
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     observation_space = env.observation_space
     pos_high, vel_high = observation_space.high
     pos_low, vel_low = observation_space.low
-    train = SAC(alpha=0.02,
+    train = QAC(alpha=0.02,
                    gamma=1,
                    env=env,
                    location_centers= np.linspace(pos_low * 0.8, pos_high * 0.8, num=4),
